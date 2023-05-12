@@ -1,0 +1,20 @@
+{
+  "name": "test_env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pw:chrome-only": "playwright install chromium",
+    "wp-env": "wp-env",
+    "start:env": "wp-env start",
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@wordpress/env": "^7.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  }
+}
