@@ -5,16 +5,15 @@
   "main": "index.js",
   "scripts": {
     "pw:chrome-only": "playwright install chromium",
+    "test": "playwright test",
     "wp-env": "wp-env",
-    "start:env": "wp-env start",
+    "start:env": "wp-env start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/env": "^7.0.0"
-  },
-  "devDependencies": {
+    "@wordpress/env": "^7.0.0",
     "@playwright/test": "^1.33.0"
   }
 }
