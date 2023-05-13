@@ -20,8 +20,8 @@ jobs:
       run: |
         npm run start:env 
 
-    - name: Install Playwright Browsers
-      run: npx playwright install chromium
+    # - name: Install Playwright Browsers
+    #   run: npx playwright install chromium
 
     - name: Run Playwright tests
       run: npx playwright test
@@ -31,14 +31,14 @@ jobs:
       if: always() 
       with:
         report_paths: "junit-report/e2e-results.xml"
-        # include_passed: TRUE,
-        # check_retries: TRUE,
-        # detailed_summary: true,
+        include_passed: TRUE,
+        check_retries: TRUE,
+        detailed_summary: TRUE,
         check_name: 'E2E Test Report (JUnit)_check_nem'
         summary: 'E2E Test Summary Report (JUnit)_summary'
         # annotate_only: true,
-        annotate_notice: true,
-        job_name: 'e2e2e2e2e2e2e2e_jobName'
+        # annotate_notice: true,
+        # job_name: 'e2e2e2e2e2e2e2e_jobName'
 
     - uses: actions/upload-artifact@v3
       if: always()
