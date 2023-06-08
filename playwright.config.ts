@@ -21,8 +21,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html', { open: 'never', outputFolder: 'playwright-report/html/html-report-e2e' }],
-    ['junit', { outputFile: 'playwright-report/junit-report/e2e-results.xml' }],
+    // ['html', { open: 'never', outputFolder: `playwright-report/${process.env.report}/html/html-report-e2e` }],
+    ['junit', { outputFile: `playwright-report/${process.env.REPORT}/junit-report/e2e-results.xml` }],
     ['list', { printSteps: true }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -37,15 +37,15 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'test_a',
       testDir: './tests/api',
-      name: 'api',
       testMatch: /.*\.spec\.ts/,
       // use: { ...devices['Desktop Chrome'] },
     },
     
     {
+      name: 'test_b',
       testDir: './tests/e2e',
-      name: 'e2e',
       testMatch: /.*\.spec\.ts/,
       // use: { ...devices['Desktop Chrome'] },
     },
