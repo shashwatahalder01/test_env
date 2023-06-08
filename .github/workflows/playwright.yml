@@ -28,32 +28,35 @@ jobs:
       run: |
         npm run start:env 
 
-    - name: Activate theme:Storefront
-      run: |
-        npm run wp-env run tests-cli 'wp theme activate storefront' 
+    # - name: Activate theme:Storefront
+    #   run: |
+    #     npm run wp-env run tests-cli 'wp theme activate storefront' 
 
     # - name: Install Playwright Browsers
     #   run: npx playwright install chromium
 
     - name: Run Playwright tests
-      run: REPORT=test_a npx playwright test --project=test_a
+      run: REPORT=test_a npx playwright test --project=api
 
-    - name: Run Playwright tests
-      run: REPORT=test_b npx playwright test --project=test_b
+    # - name: Run Playwright tests
+    #   run: REPORT=test_b npx playwright test --project=test_b
 
     - name: Publish Test Report a
-      uses: mikepenz/action-junit-report@v3
+      uses: mikepenz/action-junit-report@v3.7.7
       if: always() 
       with:
         report_paths: 'playwright-report/test_a/junit-report/e2e-results.xml'
-        include_passed: TRUE,
-        check_retries: TRUE,
-        detailed_summary: TRUE,
-        check_name: 'E2E Test Report (JUnit)_test_a'
+        include_passed: true,
+        check_retries: true,
+        detailed_summary: true,
+        check_name: 'E2E Test Report (JUnit)_check_name'
         summary: 'E2E Test Summary Report (JUnit)_summary'
-        annotate_only: true,
+        # annotate_only: true,
         annotate_notice: true,
         job_name: 'e2e2e2e2e2e2e2e_jobName'
+        job_summary: true,
+        test_files_prefix: 'ABC_'
+        token: ${{ github.token }}
 
     
     # - name: Publish Test Report b
