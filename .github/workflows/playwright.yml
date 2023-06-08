@@ -13,10 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
   checks: write
-  id-token: write
-
     
 jobs:
   test:
@@ -42,7 +39,7 @@ jobs:
     #   run: npx playwright install chromium
 
     - name: Run Playwright tests
-      run: REPORT=test_a npx playwright test --project=api
+      run: REPORT=api npx playwright test --project=api
 
     # - name: Run Playwright tests
     #   run: REPORT=test_b npx playwright test --project=test_b
@@ -51,17 +48,17 @@ jobs:
       uses: mikepenz/action-junit-report@v3.7.7
       if: always() 
       with:
-        report_paths: 'playwright-report/test_a/junit-report/e2e-results.xml'
-        include_passed: true,
-        check_retries: true,
+        report_paths: 'playwright-report/api/junit-report/e2e-results.xml'
+        # include_passed: true,
+        # check_retries: true,
         detailed_summary: true,
-        check_name: 'E2E Test Report (JUnit)_check_name'
+        check_name: 'E2E Test Report'
         summary: 'E2E Test Summary Report (JUnit)_summary'
         # annotate_only: true,
-        annotate_notice: true,
+        # annotate_notice: true,
         job_name: 'e2e2e2e2e2e2e2e_jobName'
-        job_summary: true,
-        test_files_prefix: 'ABC_'
+        # job_summary: true,
+        # test_files_prefix: 'ABC_'
         token: ${{ secrets.GITHUB_TOKEN }}
 
     
