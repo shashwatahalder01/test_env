@@ -1,8 +1,5 @@
 {
     "core": null,
-    "plugins": [ "." ],
-    "themes": [
-        "https://downloads.wordpress.org/theme/storefront.latest-stable.zip"
-      ]
-      
+    "plugins": [ "." ]
+
 }
