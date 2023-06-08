@@ -38,7 +38,7 @@ jobs:
       uses: mikepenz/action-junit-report@v3
       if: always() 
       with:
-        report_paths: "junit-report/e2e-results.xml"
+        report_paths: "playwright-report/junit-report/e2e-results.xml"
         include_passed: TRUE,
         check_retries: TRUE,
         detailed_summary: TRUE,
