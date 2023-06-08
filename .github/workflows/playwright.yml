@@ -56,7 +56,7 @@ jobs:
         job_name: 'e2e2e2e2e2e2e2e_jobName'
         job_summary: true,
         test_files_prefix: 'ABC_'
-        token: ${{ github.token }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     
     # - name: Publish Test Report b
