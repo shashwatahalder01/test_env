@@ -28,6 +28,10 @@ jobs:
       run: |
         npm run start:env 
 
+    - name: Activate theme:Storefront
+      run: |
+        npm run wp-env run tests-cli 'wp theme activate storefront' 
+
     # - name: Install Playwright Browsers
     #   run: npx playwright install chromium
 

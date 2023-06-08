@@ -37,14 +37,14 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'test_a',
+      name: 'api',
       testDir: './tests/api',
       testMatch: /.*\.spec\.ts/,
       // use: { ...devices['Desktop Chrome'] },
     },
     
     {
-      name: 'test_b',
+      name: 'e2e',
       testDir: './tests/e2e',
       testMatch: /.*\.spec\.ts/,
       // use: { ...devices['Desktop Chrome'] },
