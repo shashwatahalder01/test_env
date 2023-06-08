@@ -1,56 +1,6 @@
-<testsuites id="" name="" tests="6" failures="2" skipped="2" errors="0" time="8.440331000000239">
-<testsuite name="a.spec.ts" timestamp="2023-05-12T18:34:34.145Z" hostname="chromium" tests="6" failures="2" skipped="2" time="2.505" errors="0">
-<testcase name="test1" classname="a.spec.ts" time="0.742">
-</testcase>
-<testcase name="test2" classname="a.spec.ts" time="0.168">
-</testcase>
-<testcase name="test3" classname="a.spec.ts" time="0.206">
-<failure message="a.spec.ts:11:5 test3" type="FAILURE">
-<![CDATA[  [chromium] › a.spec.ts:11:5 › test3 ──────────────────────────────────────────────────────────────
-
-    Error: expect(received).toBeTruthy()
-
-    Received: false
-
-      10 |
-      11 | test('test3', async ({ page }) => {
-    > 12 |   expect(false).toBeTruthy();
-         |                 ^
-      13 | });
-      14 |
-      15 | test('test4', async ({ page }) => {
-
-        at /Users/rk/Automation/test_env/tests/a.spec.ts:12:17
-]]>
-</failure>
-</testcase>
-<testcase name="test4" classname="a.spec.ts" time="0.624">
-<failure message="a.spec.ts:15:5 test4" type="FAILURE">
-<![CDATA[  [chromium] › a.spec.ts:15:5 › test4 ──────────────────────────────────────────────────────────────
-
-    Error: expect(received).toBeTruthy()
-
-    Received: false
-
-      14 |
-      15 | test('test4', async ({ page }) => {
-    > 16 |   expect(false).toBeTruthy();
-         |                 ^
-      17 | });
-      18 |
-      19 | test('test5', async ({ page }) => {
-
-        at /Users/rk/Automation/test_env/tests/a.spec.ts:16:17
-]]>
-</failure>
-</testcase>
-<testcase name="test5" classname="a.spec.ts" time="0.536">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="test6" classname="a.spec.ts" time="0.229">
-<skipped>
-</skipped>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.13833599999547">
+<testsuite name="tests/e2e/a.spec.ts" timestamp="2023-05-31T09:44:56.811Z" hostname="e2e" tests="1" failures="0" skipped="0" time="0.037" errors="0">
+<testcase name="test1_a" classname="tests/e2e/a.spec.ts" time="0.037">
 </testcase>
 </testsuite>
 </testsuites>
