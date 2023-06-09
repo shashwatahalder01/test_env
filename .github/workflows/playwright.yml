@@ -52,7 +52,7 @@ jobs:
         report_paths: 'playwright-report/junit-report/e2e-results.xml'
         include_passed: false,
         check_retries: true,
-        detailed_summary: true,
+        detailed_summary: fasle,
         check_name: 'E2E Test Report'   # Check name to use when creating a check run.
         summary: 'E2E Test Summary Report (JUnit)_summary'  # Additional text to summary output
         # annotate_only: true,
