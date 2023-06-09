@@ -62,14 +62,16 @@ jobs:
         # test_files_prefix: 'ABC_'
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: actions/github-script@v5
+    - name: Post Smoke tests results comment on PR
+      if: always()
+      uses: actions/github-script@v6
       id: set-result
       with:
         script: return "Hello!"
         result-encoding: string
 
-    # - name: Get result
-    #    run: echo "${{steps.set-result.outputs.result}}"
+    - name: Get result
+      run: echo "${{steps.{CHANGELOG_STEP_ID}.outputs.total}}"
 
     # - name: Publish Test Report b
     #   uses: mikepenz/action-junit-report@v3
