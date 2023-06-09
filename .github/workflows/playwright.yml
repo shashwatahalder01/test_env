@@ -62,6 +62,8 @@ jobs:
         job_summary: true,
         # test_files_prefix: 'ABC_'
         token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - run: npm install execa
 
     - name: Post Smoke tests results comment on PR
       if: always()
@@ -72,8 +74,11 @@ jobs:
         LAST_NAME: Octocat
       with:
         script: |
-          const { FIRST_NAME, LAST_NAME } = process.env
-          console.log(`Hello ${FIRST_NAME} ${LAST_NAME}`)
+          const execa = require('execa')
+
+          const { stdout } = await execa('echo', ['hello', 'world'])
+
+          console.log(stdout)
 
 
     # - name: Get result
