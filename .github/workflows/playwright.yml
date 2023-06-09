@@ -47,6 +47,7 @@ jobs:
 
     - name: Publish Test Report a
       uses: mikepenz/action-junit-report@v3.7.7
+      id: test-res
       if: always() 
       with:
         report_paths: 'playwright-report/junit-report/e2e-results.xml'
@@ -71,7 +72,11 @@ jobs:
         result-encoding: string
 
     - name: Get result
-      run: echo "${{steps.{CHANGELOG_STEP_ID}.outputs.total}}"
+      run: echo "${{steps.test-res.outputs.total}}"
+
+    - name: Get results
+      run: echo "${{steps.set-result.outputs.result}}"
+    
 
     # - name: Publish Test Report b
     #   uses: mikepenz/action-junit-report@v3
