@@ -68,8 +68,8 @@ jobs:
         script: return "Hello!"
         result-encoding: string
 
-    - name: Get result
-       run: echo "${{steps.set-result.outputs.result}}"
+    # - name: Get result
+    #    run: echo "${{steps.set-result.outputs.result}}"
 
     # - name: Publish Test Report b
     #   uses: mikepenz/action-junit-report@v3
