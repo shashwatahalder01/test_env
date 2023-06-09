@@ -67,11 +67,13 @@ jobs:
       if: always()
       uses: actions/github-script@v6
       id: set-result
+      env:
+        FIRST_NAME: Mona
+        LAST_NAME: Octocat
       with:
         script: |
-          const execa = require('execa')
-          const { stdout } = await execa('echo', ['hello', 'world'])
-          console.log(stdout)
+          const { FIRST_NAME, LAST_NAME } = process.env
+          console.log(`Hello ${FIRST_NAME} ${LAST_NAME}`)
 
 
     # - name: Get result
