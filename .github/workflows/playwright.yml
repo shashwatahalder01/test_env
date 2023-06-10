@@ -63,22 +63,28 @@ jobs:
         # test_files_prefix: 'ABC_'
         token: ${{ secrets.GITHUB_TOKEN }}
     
-    - run: npm install execa
+    - name: Generate list using Markdown
+      run: |
+          echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY # this is a blank line
+          echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
+          echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
+          echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
 
-    - name: Post Smoke tests results comment on PR
-      if: always()
-      uses: actions/github-script@v6
-      id: set-result
-      env:
-        FIRST_NAME: Mona
-        LAST_NAME: Octocat
-      with:
-        script: |
-          const execa = require('execa')
+    # - name: Post Smoke tests results comment on PR
+    #   if: always()
+    #   uses: actions/github-script@v6
+    #   id: set-result
+    #   env:
+    #     FIRST_NAME: Mona
+    #     LAST_NAME: Octocat
+    #   with:
+    #     script: |
+    #       const execa = require('execa')
 
-          const { stdout } = await execa('echo', ['hello', 'world'])
+    #       const { stdout } = await execa('echo', ['hello', 'world'])
 
-          console.log(stdout)
+    #       console.log(stdout)
 
 
     # - name: Get result
