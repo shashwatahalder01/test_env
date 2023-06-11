@@ -9,21 +9,13 @@ const e2eTestRes = jsonData.testsuites._attributes;
 // console.log(e2eTestRes);
 
 const env = {
-	wpVersion: '6.2.2',
-	phpVersion:'8.0.28',
-	mysqlVersion: '8.0.27',
-	theme: 'Storefront v4.2.0',
-	wpDebugMode: true,
-	activePlugins: [
-	  'dokan v3.7.20',
-	  'dokan-pro v3.7.23',
-	  'woocommerce v7.7.2',
-	  'woocommerce-bookings v1.15.69',
-	  'woocommerce-product-addons v5.0.1',
-	  'woocommerce-simple-auctions v2.0.18',
-	  'woocommerce-subscriptions v4.6.0'
-	]
-}
+	wpVersion: 'WordPress Version: 6.2.2',
+	phpVersion: 'PHP Version: 8.0.28',
+	mysqlVersion: 'MySql Version: 8.0.27',
+	theme: 'ThemeStorefront v4.2.0',
+	wpDebugMode: 'Debug Modetrue',
+	activePlugins: 'Plugins: Basic-Auth-master v0.1,dokan v3.7.20,dokan-pro v3.7.23,woocommerce v7.7.2,woocommerce-bookings v1.15.69,woocommerce-product-addons v5.0.1,woocommerce-simple-auctions v2.0.18,woocommerce-subscriptions v4.6.0'
+  }
 
 
 const getFormattedDuration = ( time) => {
@@ -39,6 +31,7 @@ const getFormattedDuration = ( time) => {
 const addSummaryHeadingAndTable = ( core ) => {
 
 	core.summary
+	.clear()
 	.addHeading( 'Tests Summary' )
 	.addTable( [
 		[
@@ -55,19 +48,20 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
+// const addPlist = ( core ) => {
+// 	let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
+//  return sum.stringify();
+// }
+
 const addList = ( core ) => {
 	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
    return sum.stringify();
 }
+
 const addSummaryFooter = ( core ,list) => {
 	core.summary
-	    // .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
 		.addBreak()
-		core.summary.addDetails('Test Environment Details', list)
-		
-
-		
-
+		core.summary.addDetails('Test Environment Details', list);
 };
 
 module.exports = async ( { github, context, core} ) => {
