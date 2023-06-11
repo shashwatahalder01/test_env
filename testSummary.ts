@@ -6,7 +6,7 @@ const xmlFile = fs.readFileSync('./playwright-report/junit-report/e2e-results.xm
 const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 const e2eTestRes = jsonData.testsuites._attributes;
 
-const getFormattedDuration = ( time: string | number  ) => {
+const getFormattedDuration = ( time) => {
 	time =  Number(time) * 1000;
 	// const min = Math.floor( time / 1000 / 60 );
 	// const sec = Math.floor( ( time / 1000 ) % 60 );
