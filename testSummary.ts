@@ -1,4 +1,4 @@
-import * as core from '@actions/core' 
+// import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
 
