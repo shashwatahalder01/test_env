@@ -80,7 +80,7 @@ jobs:
       with:
           result-encoding: string
           script: |
-              const script = require( "${{github.action_path}}../testSummary.js" )
+              const script = require( "${{github.action_path}}/scripts/testSummary.js" )
               await script({github, context, core})
 
 
