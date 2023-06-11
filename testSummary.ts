@@ -13,7 +13,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 			{ data: 'Unknown :grey_question:', header: true },
 			{ data: 'Duration :stopwatch:', header: true },
 		],
-		['API test', '238', '236', '1', '0', '1', '-', '10 min'],
+		['API test', '240', '236', '1', '0', '1', '-', '10 min'],
 		['E2E test', '115', '110', '1', '0', '4', '-', '15 min']
 
 	] );
