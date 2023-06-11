@@ -77,7 +77,7 @@ jobs:
       with:
           result-encoding: string
           script: |
-              const script = require( '../testSummary.js' )
+              const script = require( './repo/.github/workflows/scripts/testSummary.js' )
               await script({github, context, core})
 
 
