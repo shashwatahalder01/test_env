@@ -1,5 +1,5 @@
-import convert from 'xml-js';
-import fs from 'fs';
+const convert = require('xml-js');
+const fs = require('fs');
 
 // read file
 const xmlFile = fs.readFileSync('./playwright-report/junit-report/e2e-results.xml', 'utf8');
