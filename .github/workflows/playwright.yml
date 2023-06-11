@@ -78,7 +78,8 @@ jobs:
           result-encoding: string
           script: |
               const script = require( '../testSummary.js' )
-              return await script( { core } )
+              await script({github, context, core})
+
 
 
     # - name: Get result
