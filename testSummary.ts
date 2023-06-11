@@ -1,4 +1,4 @@
-// import * as core from '@actions/core' 
+import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
 
@@ -55,24 +55,25 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
-const addlist = ( core ) => {
+const addList = ( core ) => {
 	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
    return sum.stringify();
 }
-const addSummaryFooter = ( core ) => {
+const addSummaryFooter = ( core ,list) => {
 	core.summary
 	    // .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
 		.addBreak()
-		core.summary.addDetails('Test Environment Details', addlist(core))
+		core.summary.addDetails('Test Environment Details', list)
 		
 
 		
 
 };
 
-module.exports = async ( { github, context, core} ) => {
+module.exports = async ( { github, context} ) => {
+	let list = addList(core);
 	addSummaryHeadingAndTable( core );
-	addSummaryFooter( core );
+	addSummaryFooter( core,list );
 	// core.summary.addDetails('Test Environment Details', 
 	// )
 
