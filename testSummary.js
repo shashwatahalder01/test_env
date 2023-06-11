@@ -36,7 +36,7 @@ const addSummaryFooter = ( core ) => {
 };
 
 
-export default async ( { github, context, core} ) => {
+module.exports = async ( { github, context, core} ) => {
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core );
 	const summary = core.summary.stringify();
