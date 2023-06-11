@@ -73,7 +73,7 @@ jobs:
 
 
     - name: Post test summary
-      uses: actions/github-script@v6
+      uses: actions/github-script@v6.4.1
       with:
           result-encoding: string
           script: |
