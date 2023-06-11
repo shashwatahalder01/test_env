@@ -5,6 +5,8 @@ const fs = require('fs');
 const xmlFile = fs.readFileSync('./junit-report/e2e-results.xml', 'utf8');
 const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 const e2eTestRes = jsonData.testsuites._attributes;
+console.log(e2eTestRes);
+
 
 const getFormattedDuration = ( time) => {
 	time =  Number(time) * 1000;
@@ -38,10 +40,6 @@ const addSummaryFooter = ( core ) => {
 	core.summary
 		// .addSeparator()
 		.addRaw( 'Test Message 1' )
-		.addLink(
-			'here.',
-			'https://playwright.dev'
-		)
 		.addBreak()
 		.addRaw( 'Test Message 2' )
 
