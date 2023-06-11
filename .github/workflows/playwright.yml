@@ -71,20 +71,14 @@ jobs:
           echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
 
-    # - name: Post Smoke tests results comment on PR
-    #   if: always()
-    #   uses: actions/github-script@v6
-    #   id: set-result
-    #   env:
-    #     FIRST_NAME: Mona
-    #     LAST_NAME: Octocat
-    #   with:
-    #     script: |
-    #       const execa = require('execa')
 
-    #       const { stdout } = await execa('echo', ['hello', 'world'])
-
-    #       console.log(stdout)
+    - name: Post test summary
+      uses: actions/github-script@v6
+      with:
+          result-encoding: string
+          script: |
+              const script = require( './testSummary.ts' )
+              return await script( { core } )
 
 
     # - name: Get result
