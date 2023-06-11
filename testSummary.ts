@@ -57,7 +57,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 
 const addSummaryFooter = ( core ) => {
 	core.summary
-	    .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(' ')])
+	    .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n ')])
 		.addBreak()
 		core.summary.addDetails('Test Environment Details', 'awsdefrgtyhujik')
 		
