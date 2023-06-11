@@ -1,4 +1,4 @@
-// import * as core from '@actions/core' 
+import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
 
@@ -10,11 +10,19 @@ const e2eTestRes = jsonData.testsuites._attributes;
 
 const env = {
 	wpVersion: 'WordPress Version: 6.2.2',
-	phpVersion: 'PHP Version: 8.0.28',
+	phpVersion: 'PHP Version: 8',
 	mysqlVersion: 'MySql Version: 8.0.27',
 	theme: 'Theme: Storefront v4.2.0',
 	wpDebugMode: 'Debug Mode: true',
-	activePlugins: 'Plugins: Basic-Auth-master v0.1, dokan v3.7.20, dokan-pro v3.7.23, woocommerce v7.7.2, woocommerce-bookings v1.15.69, woocommerce-product-addons v5.0.1, woocommerce-simple-auctions v2.0.18, woocommerce-subscriptions v4.6.0'
+	activePlugins: [
+	  'dokan v3.7.20',
+	  'dokan-pro v3.7.23',
+	  'woocommerce v7.7.2',
+	  'woocommerce-bookings v1.15.69',
+	  'woocommerce-product-addons v5.0.1',
+	  'woocommerce-simple-auctions v2.0.18',
+	  'woocommerce-subscriptions v4.6.0'
+	]
   }
 
 
@@ -47,13 +55,17 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
-// const addPlist = ( core ) => {
-// 	let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
-//  return sum.stringify();
-// }
+const addPlist = ( core ) => {
+	let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
+ return sum.stringify();
+}
 
-const addList = ( core ) => {
-	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins)])
+const addDetails = ( core, list ) => {
+	  let sum = core.summary.addDetails('Test Environment Details', list);
+   return sum.stringify();
+}
+const addList = ( core, list1 ) => {
+	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1])
    return sum.stringify();
 }
 
@@ -63,8 +75,13 @@ const addSummaryFooter = ( core ,list) => {
 		core.summary.addDetails('Test Environment Details', list);
 };
 
-module.exports = async ( { github, context, core} ) => {
-	let list = addList(core);
+module.exports = async ( { github, context, } ) => {
+	core.summary.addList
+	let list1 = addPlist(env.activePlugins);
+	await core.summary.clear();
+	let list2 = addDetails(core, list1);
+	await core.summary.clear();
+	let list = addList(core, list2);
 	await core.summary.clear();
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list );
