@@ -46,7 +46,7 @@ jobs:
     #   run: REPORT=api npx playwright test --project=api
 
     # - name: Run Playwright tests
-    #   run: REPORT=test_b npx playwright test --project=test_b
+    #   run: REPORT=e2e npx playwright test --project=e2e
 
     # - name: Publish Test Report a
     #   uses: mikepenz/action-junit-report@v3.7.7

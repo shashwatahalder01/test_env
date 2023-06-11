@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test_b_1 ', async ( ) => {
+test('test_b_1 ', async () => {
   expect(true).toBeTruthy();
 });
 
