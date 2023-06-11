@@ -10,6 +10,7 @@ const e2eTestRes = jsonData.testsuites._attributes;
 
 const env = {
 	wpVersion: '6.2.2',
+	phpVersion:'8.0.28',
 	mysqlVersion: '8.0.27',
 	theme: 'Storefront v4.2.0',
 	wpDebugMode: true,
@@ -56,15 +57,9 @@ const addSummaryHeadingAndTable = ( core ) => {
 
 const addSummaryFooter = ( core ) => {
 	core.summary
-		// .addSeparator()
-		.addRaw( 'Test Message 1' )
+	    .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(' ')])
 		.addBreak()
-		.addRaw( 'Test Message 2', true )
-		core.summary.addCodeBlock('qwerty qwerty qwerty qwerty qwerty')
-		core.summary.addDetails('Env info', 'awsdefrgtyhujik')
-		core.summary.addList(['a','b','c','d','e'])
-		core.summary.addQuote('aqzzwsxecdrfvtgbyhnujmik,zawsxecdrfvtgbyhnujmiii')
-		core.summary.addRaw('jj', true)
+		core.summary.addDetails('Test Environment Details', 'awsdefrgtyhujik')
 		
 
 		
@@ -74,6 +69,10 @@ const addSummaryFooter = ( core ) => {
 module.exports = async ( { github, context, core} ) => {
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core );
+	// core.summary.addDetails('Test Environment Details', 
+	// )
+
+	// core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(' ')]
 	const summary = core.summary.stringify();
 	await core.summary.write();
 	return summary;
