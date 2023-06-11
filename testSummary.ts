@@ -1,4 +1,4 @@
-import * as core from '@actions/core' 
+// import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
 
@@ -70,7 +70,7 @@ const addSummaryFooter = ( core ,list) => {
 
 };
 
-module.exports = async ( { github, context} ) => {
+module.exports = async ( { github, context, core} ) => {
 	let list = addList(core);
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list );
