@@ -55,11 +55,15 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
+const addlist = ( core ) => {
+	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
+   return core.summary.stringify();
+}
 const addSummaryFooter = ( core ) => {
 	core.summary
-	    .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n ')])
+	    .addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
 		.addBreak()
-		core.summary.addDetails('Test Environment Details', 'awsdefrgtyhujik')
+		core.summary.addDetails('Test Environment Details', addlist(core))
 		
 
 		
