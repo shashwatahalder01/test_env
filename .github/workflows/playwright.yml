@@ -73,14 +73,14 @@ jobs:
 
     - name: abc
       run: |
-          echo "${{github.action_path}}"
+          echo "hbviuyftyvhbiutf bhihbiuyvb : ${{github.action_path}}"
           
     - name: Post test summary
       uses: actions/github-script@v6.4.1
       with:
           result-encoding: string
           script: |
-              const script = require( './repo/.github/workflows/scripts/testSummary.js' )
+              const script = require( "${{github.action_path}}../testSummary.js" )
               await script({github, context, core})
 
 
