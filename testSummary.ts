@@ -2,7 +2,7 @@
 
 const addSummaryHeadingAndTable = ( core ) => {
 
-	core.summary.addHeading( 'Smoke tests on nightly build' ).addTable( [
+	core.summary.addHeading( 'Smoke tests' ).addTable( [
 		[
 			{ data: 'Test :test_tube:', header: true },
             { data: 'Total :bar_chart:', header: true },
