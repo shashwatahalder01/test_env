@@ -61,7 +61,7 @@ const addPlist = ( core ) => {
 }
 
 const addDetails = ( core, list ) => {
-	  let sum = core.summary.addDetails('Test Environment Details', list);
+	  let sum = core.summary.addDetails('Plugins: ', list);
    return sum.stringify();
 }
 const addList = ( core, list1 ) => {
@@ -72,7 +72,7 @@ const addList = ( core, list1 ) => {
 const addSummaryFooter = ( core ,list) => {
 	core.summary
 		.addBreak()
-		core.summary.addDetails('Test Environment Details', list);
+		core.summary.addDetails('Test Environment Details: ', list);
 };
 
 module.exports = async ( { github, context,core } ) => {
