@@ -57,7 +57,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 
 const addlist = ( core ) => {
 	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(',\n')])
-   return core.summary.stringify();
+   return sum.stringify();
 }
 const addSummaryFooter = ( core ) => {
 	core.summary
