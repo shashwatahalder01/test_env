@@ -19,9 +19,6 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
-
-
-
 const addSummaryFooter = ( core ) => {
 	core.summary
 		.addSeparator()
