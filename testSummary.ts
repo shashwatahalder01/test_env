@@ -1,4 +1,4 @@
-import * as core from '@actions/core' 
+// import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
 
@@ -75,7 +75,7 @@ const addSummaryFooter = ( core ,list) => {
 		core.summary.addDetails('Test Environment Details', list);
 };
 
-module.exports = async ( { github, context, } ) => {
+module.exports = async ( { github, context,core } ) => {
 	core.summary.addList
 	let list1 = addPlist(env.activePlugins);
 	await core.summary.clear();
@@ -83,12 +83,9 @@ module.exports = async ( { github, context, } ) => {
 	await core.summary.clear();
 	let list = addList(core, list2);
 	await core.summary.clear();
+
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list );
-	// core.summary.addDetails('Test Environment Details', 
-	// )
-
-	// core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, (env.activePlugins).join(' ')]
 	const summary = core.summary.stringify();
 	await core.summary.write();
 	return summary;
