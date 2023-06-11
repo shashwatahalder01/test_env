@@ -65,7 +65,7 @@ const addDetails = ( core, list ) => {
    return sum.stringify();
 }
 const addList = ( core, list1 ) => {
-	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1])
+	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ])
    return sum.stringify();
 }
 
@@ -77,15 +77,15 @@ const addSummaryFooter = ( core ,list) => {
 
 module.exports = async ( { github, context,core } ) => {
 	core.summary.addList
-	let list1 = addPlist(env.activePlugins);
+	let list1 = addPlist(core ,env.activePlugins);
 	await core.summary.clear();
 	let list2 = addDetails(core, list1);
 	await core.summary.clear();
-	let list = addList(core, list2);
+	let list3 = addList(core, list2);
 	await core.summary.clear();
-
+	
 	addSummaryHeadingAndTable( core );
-	addSummaryFooter( core,list );
+	addSummaryFooter( core,list3 );
 	const summary = core.summary.stringify();
 	await core.summary.write();
 	return summary;
