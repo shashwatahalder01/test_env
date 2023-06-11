@@ -2,7 +2,7 @@
 
 const addSummaryHeadingAndTable = ( core ) => {
 
-	core.summary.addHeading( 'Smoke tests' ).addTable( [
+	core.summary.addHeading( 'Tests Summary' ).addTable( [
 		[
 			{ data: 'Test :test_tube:', header: true },
             { data: 'Total :bar_chart:', header: true },
@@ -24,7 +24,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 
 const addSummaryFooter = ( core ) => {
 	core.summary
-		.addSeparator()
+		// .addSeparator()
 		.addRaw( 'Test Message 1' )
 		.addLink(
 			'here.',
