@@ -2,7 +2,7 @@ const convert = require('xml-js');
 const fs = require('fs');
 
 // read file
-const xmlFile = fs.readFileSync('./playwright-report/junit-report/e2e-results.xml', 'utf8');
+const xmlFile = fs.readFileSync('./junit-report/e2e-results.xml', 'utf8');
 const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 const e2eTestRes = jsonData.testsuites._attributes;
 
