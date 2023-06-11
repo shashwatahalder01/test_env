@@ -15,6 +15,9 @@ concurrency:
 
 permissions:
   checks: write
+  contents: read
+  issues: write
+  pull-requests: write
     
 jobs:
   test:
@@ -71,7 +74,6 @@ jobs:
     #       echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
     #       echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
 
-          
     - name: Prepare test summary
       id: prepare-test-summary
       uses: actions/github-script@v6.4.1
@@ -97,13 +99,6 @@ jobs:
           body: ${{ steps.prepare-test-summary.outputs.result }}
           edit-mode: replace
 
-
-    # - name: Get result
-    #   run: echo "${{steps.test-res.outputs.total}}"
-
-    # - name: Get results
-    #   run: echo "${{steps.set-result.outputs.result}}"
-    
 
     # - name: Publish Test Report b
     #   uses: mikepenz/action-junit-report@v3
