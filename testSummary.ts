@@ -2,7 +2,7 @@
 const convert = require('xml-js');
 const fs = require('fs');
 
-const env = {
+const env1 = {
 	wpVersion: 'WordPress Version: 6.2.2',
 	phpVersion: 'PHP Version: 8',
 	mysqlVersion: 'MySql Version: 8.0.27',
@@ -18,6 +18,7 @@ const env = {
 	  'woocommerce-subscriptions v4.6.0'
 	]
   }
+  const env = JSON.stringify(env1);
  const apiTestResultFile = './junit-reportnnn/e2e-results.xml'
  const e2eTestResultFile = './junit-report/e2e-results.xml'
 

@@ -48,23 +48,23 @@ jobs:
     # - name: Run Playwright tests
     #   run: REPORT=e2e npx playwright test --project=e2e
 
-    # - name: Publish Test Report a
-    #   uses: mikepenz/action-junit-report@v3.7.7
-    #   id: test-res
-    #   if: always() 
-    #   with:
-    #     report_paths: 'playwright-report/junit-report/e2e-results.xml'
-    #     include_passed: false,
-    #     check_retries: true,
-    #     detailed_summary: fasle,
-    #     check_name: 'E2E Test Report'   # Check name to use when creating a check run.
-    #     summary: 'E2E Test Summary Report (JUnit)_summary'  # Additional text to summary output
-    #     # annotate_only: true,
-    #     annotate_notice: true,
-    #     job_name: 'e2e2e2e2e2e2e2e_jobName'
-    #     job_summary: true,
-    #     # test_files_prefix: 'ABC_'
-    #     token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish Test Report a
+      uses: mikepenz/action-junit-report@v3.7.7
+      id: test-res
+      if: always() 
+      with:
+        report_paths: 'playwright-report/junit-report/e2e-results.xml'
+        # include_passed: false,
+        check_retries: true,
+        # detailed_summary: fasle,
+        check_name: 'E2E Test Report'   # Check name to use when creating a check run.
+        summary: 'E2E Test Summary Report (JUnit)_summary'  # Additional text to summary output
+        # annotate_only: true,
+        # annotate_notice: true,
+        # job_name: 'e2e2e2e2e2e2e2e_jobName'
+        # job_summary: true,
+        # test_files_prefix: 'ABC_'
+        token: ${{ secrets.GITHUB_TOKEN }}
     
     # - name: Generate list using Markdown
     #   run: |
