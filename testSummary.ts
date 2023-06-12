@@ -18,8 +18,8 @@ const env = {
 	  'woocommerce-subscriptions v4.6.0'
 	]
   }
- const apiTestRes = './junit-report/e2e-results.xml'
- const e2eTestRes = './junit-report/e2e-results.xml'
+ const apiTestResultFile = './junit-report/e2e-results.xml'
+ const e2eTestResultFile = './junit-report/e2e-results.xml'
 
 const getFormattedDuration = ( time) => {
 	time =  Number(time) * 1000;
@@ -31,13 +31,17 @@ const getFormattedDuration = ( time) => {
 	return `${date.getMinutes()}.${date.getSeconds()}s`;
 };
 
-const getTestResult = (filePath) => {
+const getTestResult = (suiteName, filePath) => {
+	if (fs.existsSync(filePath)) {
 	const xmlFile = fs.readFileSync(filePath, 'utf8');
 	const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 	const testResult = jsonData.testsuites._attributes;
 	console.log(testResult);
-	const testSummary = ['E2E test', testResult.tests, String( testResult.tests - testResult.failures), testResult.failures, testResult.skipped, getFormattedDuration(testResult.time)];
-	return testSummary;
+	const testSummary = [suiteName, testResult.tests, String( testResult.tests - testResult.failures), testResult.failures, testResult.skipped, getFormattedDuration(testResult.time)];
+	return testSummary;}
+	else {
+		return []
+	}
 }
 
 const addSummaryHeadingAndTable = ( core ) => {
@@ -50,8 +54,8 @@ const addSummaryHeadingAndTable = ( core ) => {
 	{ data: 'Skipped :next_track_button:', header: true },
 	{ data: 'Duration :alarm_clock:', header: true },
 ] 
-	const apiTesResult = getTestResult();
-   	const e2eTesResult = getTestResult();
+	const apiTesResult = getTestResult('API Tests', apiTestResultFile);
+   	const e2eTesResult = getTestResult('E2E Tests', e2eTestResultFile);
 	core.summary
 		.addHeading( 'Tests Summary' )
 		.addTable( [tableHeader, apiTesResult, e2eTesResult] );

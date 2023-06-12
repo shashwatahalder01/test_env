@@ -3,15 +3,17 @@ const fs = require('fs');
 const { log } = require('console');
 
 // read file
-const xmlFile = fs.readFileSync('./playwright-report/e2e/junit-report/e2e-results.xml', 'utf8');
+
+
 
 // parse xml file as a json object
-if (fs.existsSync(xmlFile)) {
+if (fs.existsSync()) {
 	console.log('ww');
   }
   else {
 	console.log('qqqqq');
   }
+  const xmlFile = fs.readFileSync('./playwright-report/e2e/junit-report/e2e-results.xml', 'utf8');
 // const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 // console.log("to json ->", jsonData);
 // const e2eTestRes = jsonData.testsuites._attributes;
