@@ -39,6 +39,7 @@ const getFormattedDuration = ( time) => {
 const addSummaryHeadingAndTable = ( core ) => {
 
 	core.summary
+	.clear()
 	.addHeading( 'Tests Summary' )
 	.addTable( [
 		[
@@ -55,18 +56,12 @@ const addSummaryHeadingAndTable = ( core ) => {
 	] );
 };
 
-const addPlist = ( core , activePlugins) => {
-	return core.summary.addList(activePlugins).stringify();
-}
-
-const addDetails = ( core ) => {
+const addList = ( core ) => {
 	let pluginList = core.summary.addList(env.activePlugins).stringify();
 	core.summary.clear();
-	return core.summary.addDetails('Plugins: ', pluginList).stringify();
-}
-
-const addList = ( core, list1 ) => {
-	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ]).stringify();
+	let pluginDetails =  core.summary.addDetails('Plugins: ', pluginList).stringify();
+	core.summary.clear();
+	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, pluginDetails ]).stringify();
 }
 
 const addSummaryFooter = ( core ,list) => {
@@ -76,12 +71,8 @@ const addSummaryFooter = ( core ,list) => {
 };
 
 module.exports = async ( { github, context,core } ) => {
-	// let list1 = addPlist(core ,env.activePlugins);
+	let list3 = addList(core);
 	// await core.summary.clear();
-	let list2 = addDetails(core);
-	await core.summary.clear();
-	let list3 = addList(core, list2);
-	await core.summary.clear();
 
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list3 );
