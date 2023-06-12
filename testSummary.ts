@@ -59,7 +59,7 @@ const addPlist = ( core , activePlugins) => {
 	return core.summary.addList(activePlugins).stringify();
 }
 
-const addDetails = ( core, list ) => {
+const addDetails = ( core ) => {
 	let pluginList = core.summary.addList(env.activePlugins).stringify();
 	return core.summary.addDetails('Plugins: ', pluginList).stringify();
 }
