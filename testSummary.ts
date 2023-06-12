@@ -48,7 +48,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 			{ data: 'Failed :rotating_light:', header: true },
 			// { data: 'Flaky :construction:', header: true }, //TODO: add flaky
 			{ data: 'Skipped :next_track_button:', header: true },
-			{ data: 'Duration :stopwatch:', header: true },
+			{ data: 'Duration :alarm_clock:', header: true },
 		],
 		// ['API test', ],
 		['E2E test', e2eTestRes.tests, String( e2eTestRes.tests - e2eTestRes.failures), e2eTestRes.failures, e2eTestRes.skipped, getFormattedDuration(e2eTestRes.time)]
@@ -56,17 +56,14 @@ const addSummaryHeadingAndTable = ( core ) => {
 };
 
 const addPlist = ( core , activePlugins) => {
-	let sum = core.summary.addList(activePlugins)
- return sum.stringify();
+	return core.summary.addList(activePlugins).stringify();
 }
 
 const addDetails = ( core, list ) => {
-	  let sum = core.summary.addDetails('Plugins: ', list);
-   return sum.stringify();
+	return core.summary.addDetails('Plugins: ', list).stringify();
 }
 const addList = ( core, list1 ) => {
-	  let sum = core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ])
-   return sum.stringify();
+	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ]).stringify();
 }
 
 const addSummaryFooter = ( core ,list) => {
@@ -83,7 +80,7 @@ module.exports = async ( { github, context,core } ) => {
 	await core.summary.clear();
 	let list3 = addList(core, list2);
 	await core.summary.clear();
-	
+
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list3 );
 	const summary = core.summary.stringify();
