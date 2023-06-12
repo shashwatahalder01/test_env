@@ -18,7 +18,7 @@ const env = {
 	  'woocommerce-subscriptions v4.6.0'
 	]
   }
- const apiTestResultFile = './junit-report/e2e-results.xml'
+ const apiTestResultFile = './junit-reportnnn/e2e-results.xml'
  const e2eTestResultFile = './junit-report/e2e-results.xml'
 
 const getFormattedDuration = ( time) => {
@@ -66,7 +66,7 @@ const addList = ( core ) => {
 	core.summary.clear();
 	let pluginDetails =  core.summary.addDetails('Plugins: ', pluginList).stringify();
 	core.summary.clear();
-	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, pluginList ]).stringify();
+	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, pluginDetails ]).stringify();
 }
 
 const addSummaryFooter = ( core ,list) => {
@@ -75,7 +75,7 @@ const addSummaryFooter = ( core ,list) => {
 		.addDetails('Test Environment Details: ', list);
 };
 
-module.exports = async ( { github, context,core } ) => {
+module.exports = async ( { github, context, core } ) => {
 	let plugins = addList(core);
 	await core.summary.clear();
 	addSummaryHeadingAndTable( core );
