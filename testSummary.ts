@@ -37,8 +37,6 @@ const getFormattedDuration = ( time) => {
 };
 
 const addSummaryHeadingAndTable = ( core ) => {
-
-	core.summary.clear();	
 	core.summary
 	.addHeading( 'Tests Summary' )
 	.addTable( [
@@ -72,8 +70,7 @@ const addSummaryFooter = ( core ,list) => {
 
 module.exports = async ( { github, context,core } ) => {
 	let list3 = addList(core);
-	// await core.summary.clear();
-
+	await core.summary.clear();
 	addSummaryHeadingAndTable( core );
 	addSummaryFooter( core,list3 );
 	const summary = core.summary.stringify();
