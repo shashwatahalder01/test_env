@@ -61,8 +61,10 @@ const addPlist = ( core , activePlugins) => {
 
 const addDetails = ( core ) => {
 	let pluginList = core.summary.addList(env.activePlugins).stringify();
+	core.summary.clear();
 	return core.summary.addDetails('Plugins: ', pluginList).stringify();
 }
+
 const addList = ( core, list1 ) => {
 	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ]).stringify();
 }
