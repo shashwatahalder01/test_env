@@ -38,8 +38,8 @@ const getFormattedDuration = ( time) => {
 
 const addSummaryHeadingAndTable = ( core ) => {
 
+	core.summary.clear();	
 	core.summary
-	.clear()
 	.addHeading( 'Tests Summary' )
 	.addTable( [
 		[
