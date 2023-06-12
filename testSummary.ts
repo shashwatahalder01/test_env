@@ -55,11 +55,11 @@ const addSummaryHeadingAndTable = ( core ) => {
 };
 
 const addList = ( core ) => {
-	// let pluginList = core.summary.addList(env.activePlugins).stringify();
-	// core.summary.clear();
+	let pluginList = core.summary.addList(env.activePlugins).stringify();
+	core.summary.clear();
 	// let pluginDetails =  core.summary.addDetails('Plugins: ', pluginList).stringify();
 	// core.summary.clear();
-	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, env.activePlugins ]).stringify();
+	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, pluginList ]).stringify();
 }
 
 const addSummaryFooter = ( core ,list) => {
