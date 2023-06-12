@@ -62,7 +62,8 @@ const addSummaryHeadingAndTable = ( core ) => {
 };
 
 const addList = ( core ) => {
-	let pluginList = core.summary.addList(env.activePlugins).stringify();
+	let pp = env.activePlugins.slice(1, -2);
+	let pluginList = core.summary.addList(pp).stringify();
 	core.summary.clear();
 	let pluginDetails =  core.summary.addDetails('Plugins: ', pluginList).stringify();
 	core.summary.clear();
