@@ -76,7 +76,7 @@ const addSummaryFooter = ( core ,list) => {
 module.exports = async ( { github, context,core } ) => {
 	// let list1 = addPlist(core ,env.activePlugins);
 	// await core.summary.clear();
-	let list2 = addDetails(core, list1);
+	let list2 = addDetails(core);
 	await core.summary.clear();
 	let list3 = addList(core, list2);
 	await core.summary.clear();
