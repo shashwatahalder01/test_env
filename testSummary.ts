@@ -60,7 +60,8 @@ const addPlist = ( core , activePlugins) => {
 }
 
 const addDetails = ( core, list ) => {
-	return core.summary.addDetails('Plugins: ', list).stringify();
+	let pluginList = core.summary.addList(env.activePlugins).stringify();
+	return core.summary.addDetails('Plugins: ', pluginList).stringify();
 }
 const addList = ( core, list1 ) => {
 	return core.summary.addList([env.wpVersion, String(env.wpDebugMode), env.phpVersion, env.mysqlVersion, env.theme, list1 ]).stringify();
@@ -69,13 +70,12 @@ const addList = ( core, list1 ) => {
 const addSummaryFooter = ( core ,list) => {
 	core.summary
 		.addBreak()
-		core.summary.addDetails('Test Environment Details: ', list);
+		.addDetails('Test Environment Details: ', list);
 };
 
 module.exports = async ( { github, context,core } ) => {
-	core.summary.addList
-	let list1 = addPlist(core ,env.activePlugins);
-	await core.summary.clear();
+	// let list1 = addPlist(core ,env.activePlugins);
+	// await core.summary.clear();
 	let list2 = addDetails(core, list1);
 	await core.summary.clear();
 	let list3 = addList(core, list2);
