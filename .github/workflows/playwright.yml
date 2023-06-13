@@ -30,7 +30,7 @@ jobs:
     #     node-version: 14
     - name: Install dependencies
       run: |
-        eco "env" 
+        echo "env" 
         npm ci
 
     # - name: Start WordPress Env
