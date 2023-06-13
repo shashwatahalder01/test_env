@@ -66,6 +66,7 @@ const addSummaryHeadingAndTable = ( core ) => {
 	core.summary
 		.addHeading( 'Tests Summary' )
 		.addRaw( `Commit SHA: ${ SHA }` )
+		.addRaw( `asdf: ${ process.env.HELL }` )
 		.addBreak()
 		.addBreak()
 		.addTable( [tableHeader, apiTesResult, e2eTesResult] );
