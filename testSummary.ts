@@ -1,6 +1,7 @@
 // import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
+require('dotenv').config();
 const {SHA, PR_NUMBER, HELL } = process.env;
 
 console.log(process.env.HELL);
