@@ -1,6 +1,7 @@
 // import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
+console.log(process.env.ABC);
 
 const env1 = {
 	wpVersion: 'WordPress Version: 6.2.2',
@@ -18,7 +19,7 @@ const env1 = {
 	  'woocommerce-subscriptions v4.6.0'
 	]
   }
-  
+
  const env2 = JSON.stringify(env1);
  const env = JSON.parse(env2);
 
