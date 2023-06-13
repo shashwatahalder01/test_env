@@ -10,7 +10,7 @@ const readFile = fs.readFileSync('./systemInfo.json', 'utf8');
 
 //  const env2 = JSON.stringify(env1);
 
-//  const env = JSON.parse(readFile);
+ const env = JSON.parse(readFile);
 
  const apiTestResultFile = './junit-report/e2e-results.xml'
  const e2eTestResultFile = './junit-report/e2e-results.xml'
