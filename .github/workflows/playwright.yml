@@ -28,7 +28,9 @@ jobs:
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: 14
-    - name: print vars
+    - name: Log
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
 
