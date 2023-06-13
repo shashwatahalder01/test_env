@@ -30,7 +30,7 @@ jobs:
     #     node-version: 14
     - name: Install dependencies
       run: |
-        echo "env" 
+        echo "$GITHUB_CONTEXT"
         npm ci
 
     # - name: Start WordPress Env
