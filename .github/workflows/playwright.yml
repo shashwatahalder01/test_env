@@ -18,7 +18,10 @@ permissions:
   contents: read
   issues: write
   pull-requests: write
-    
+ 
+env:
+  QWERTY: true  
+  
 jobs:
   test:
     timeout-minutes: 60
@@ -87,6 +90,9 @@ jobs:
     - name: Prepare test summary
       id: prepare-test-summary
       uses: actions/github-script@v6
+      env:
+        PR_NUMBER: ${{ github.event.number }}
+        SHA: ${{ github.event.pull_request.head.sha }}
       with:
           result-encoding: string
           script: |

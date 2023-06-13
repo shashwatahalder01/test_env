@@ -1,6 +1,8 @@
 // import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
+const {SHA, PR_NUMBER } = process.env;
+
 console.log(process.env.ABC);
 
 const env1 = {
@@ -63,6 +65,7 @@ const addSummaryHeadingAndTable = ( core ) => {
    	const e2eTesResult = getTestResult('E2E Tests', e2eTestResultFile);
 	core.summary
 		.addHeading( 'Tests Summary' )
+		.addRaw( `Commit SHA: ${ SHA }` )
 		.addTable( [tableHeader, apiTesResult, e2eTesResult] );
 };
 
