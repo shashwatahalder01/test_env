@@ -14,7 +14,6 @@ test('test3', async ( ) => {
   expect(false).toBeTruthy();
   console.log(process.env.ABC);
   console.log(process.env.QWERTY);
-  console.log(import.meta.env.QWERTY);
 });
 
 test('test4', async ( ) => {
