@@ -61,7 +61,7 @@ jobs:
 
     - name: Env
       run: |
-        env
+        node c.js
 
     # - name: Publish Test Report a
     #   uses: mikepenz/action-junit-report@v3.7.7
