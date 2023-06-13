@@ -28,9 +28,13 @@ jobs:
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: 14
-    - name: Install dependencies
+    - name: print vars
       run: |
         echo "$GITHUB_CONTEXT"
+
+    - name: Install dependencies
+      run: |
+        
         npm ci
 
     # - name: Start WordPress Env
