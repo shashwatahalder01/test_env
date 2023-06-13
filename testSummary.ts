@@ -2,10 +2,8 @@
 const convert = require('xml-js');
 const fs = require('fs');
 require('dotenv').config();
-const {SHA, PR_NUMBER, HELL } = process.env;
-
-console.log(process.env.HELL);
-console.log('qwertttttttty:', HELL);
+// const {SHA, PR_NUMBER } = process.env;
+console.log(process.env)
 
 const env1 = {
 	wpVersion: 'WordPress Version: 6.2.2',
@@ -66,9 +64,9 @@ const addSummaryHeadingAndTable = ( core ) => {
    	const e2eTesResult = getTestResult('E2E Tests', e2eTestResultFile);
 	core.summary
 		.addHeading( 'Tests Summary' )
-		.addRaw( `Commit SHA: ${ SHA }` )
-		.addBreak()
-		.addBreak()
+		// .addRaw( `Commit SHA: ${ SHA }` )
+		// .addBreak()
+		// .addBreak()
 		.addTable( [tableHeader, apiTesResult, e2eTesResult] );
 };
 
@@ -87,11 +85,7 @@ const addSummaryFooter = ( core ,list) => {
 		.addDetails('Test Environment Details: ', list);
 };
 
-module.exports = async ( { github, context, core, env } ) => {
-
-	console.log(env);
-
-	
+module.exports = async ( { github, context, core } ) => {
 	let plugins = addList(core);
 	await core.summary.clear();
 	addSummaryHeadingAndTable( core );
