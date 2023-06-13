@@ -20,12 +20,12 @@ import fs from 'fs';
 
 //   var jsonContent = JSON.stringify(env1);
 //  const writeToFile = (filePath , content) => {
-//     fs.writeFile(filePath, content, 'utf8' , (err) => {
+// writeToFile('systemInfo.json',jsonContent)    fs.writeFile(filePath, content, 'utf8' , (err) => {
 //         if (err) throw err;
 //     });
 // }
 
-// writeToFile('systemInfo.json',jsonContent)
+// 
 
 
 
