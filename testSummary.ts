@@ -1,9 +1,10 @@
 // import * as core from '@actions/core' 
 const convert = require('xml-js');
 const fs = require('fs');
-const {SHA, PR_NUMBER } = process.env;
+const {SHA, PR_NUMBER, HELL } = process.env;
 
-console.log(process.env.ABC);
+console.log(process.env.HELL);
+console.log('qwertttttttty:', HELL);
 
 const env1 = {
 	wpVersion: 'WordPress Version: 6.2.2',
@@ -43,7 +44,6 @@ const getTestResult = (suiteName, filePath) => {
 	const xmlFile = fs.readFileSync(filePath, 'utf8');
 	const jsonData = JSON.parse(convert.xml2json(xmlFile, {compact: true, spaces: 2}));
 	const testResult = jsonData.testsuites._attributes;
-	console.log(testResult);
 	const testSummary = [suiteName, testResult.tests, String( testResult.tests - testResult.failures), testResult.failures, testResult.skipped, getFormattedDuration(testResult.time)];
 	return testSummary;}
 	else {
@@ -86,11 +86,10 @@ const addSummaryFooter = ( core ,list) => {
 		.addDetails('Test Environment Details: ', list);
 };
 
-module.exports = async ( { github, context, core } ) => {
+module.exports = async ( { github, context, core, env } ) => {
 
-	console.log(github);
-	console.log('xxxxxxxxxxxxxxxxxxxxxxx');
-	console.log(context);
+	console.log(env);
+
 	
 	let plugins = addList(core);
 	await core.summary.clear();

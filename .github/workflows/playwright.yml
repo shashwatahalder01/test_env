@@ -42,9 +42,9 @@ jobs:
       run: |
         npm ci
 
-    - name: Start WordPress Env
-      run: |
-        npm run start:env 
+    # - name: Start WordPress Env
+    #   run: |
+    #     npm run start:env 
 
     # - name: Activate theme:Storefront
     #   run: |
@@ -53,15 +53,15 @@ jobs:
     # - name: Install Playwright Browsers
     #   run: npx playwright install chromium
 
-    - name: Run Playwright tests
-      run: REPORT=api npx playwright test --project=api
+    # - name: Run Playwright tests
+    #   run: REPORT=api npx playwright test --project=api
 
     # - name: Run Playwright tests
     #   run: REPORT=e2e npx playwright test --project=e2e
 
-    # - name: Install dep,endencies
-    #   run: |
-    #     env
+    - name: Env
+      run: |
+        env
 
     # - name: Publish Test Report a
     #   uses: mikepenz/action-junit-report@v3.7.7
@@ -99,23 +99,23 @@ jobs:
           result-encoding: string
           script: |
               const script = require("./testSummary.ts" )
-              return await script({github, context, core})
+              return await script({github, context, core, env})
       
-    - name: Find PR comment by github-actions[bot]
-      uses: peter-evans/find-comment@v2
-      id: find-comment
-      with:
-          issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: Tests Summary
+    # - name: Find PR comment by github-actions[bot]
+    #   uses: peter-evans/find-comment@v2
+    #   id: find-comment
+    #   with:
+    #       issue-number: ${{ github.event.pull_request.number }}
+    #       comment-author: 'github-actions[bot]'
+    #       body-includes: Tests Summary
           
-    - name: Create or update PR comment
-      uses: peter-evans/create-or-update-comment@v2
-      with:
-          comment-id: ${{ steps.find-comment.outputs.comment-id }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.prepare-test-summary.outputs.result }}
-          edit-mode: replace
+    # - name: Create or update PR comment
+    #   uses: peter-evans/create-or-update-comment@v2
+    #   with:
+    #       comment-id: ${{ steps.find-comment.outputs.comment-id }}
+    #       issue-number: ${{ github.event.pull_request.number }}
+    #       body: ${{ steps.prepare-test-summary.outputs.result }}
+    #       edit-mode: replace
 
 
     # - name: Publish Test Report b
