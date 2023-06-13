@@ -7,16 +7,17 @@ test('test_b_1 ', async () => {
 
 test('test_b_2', async ( ) => {
   expect(true).toBeTruthy();
+
+});
+
+test('test3', async ( ) => {
+  expect(false).toBeTruthy();
   console.log(process.env.ABC);
 });
 
-// test('test3', async ( ) => {
-//   expect(false).toBeTruthy();
-// });
-
-// test('test4', async ( ) => {
-//   expect(false).toBeTruthy();
-// });
+test('test4', async ( ) => {
+  expect(false).toBeTruthy();
+});
 
 test('test5', async ( ) => {
   test.skip();
