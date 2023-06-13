@@ -29,7 +29,9 @@ jobs:
     #   with:
     #     node-version: 14
     - name: Install dependencies
-      run: npm ci
+      run: |
+        eco "env" 
+        npm ci
 
     # - name: Start WordPress Env
     #   run: |

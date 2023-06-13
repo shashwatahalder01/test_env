@@ -18,9 +18,11 @@ const env1 = {
 	  'woocommerce-subscriptions v4.6.0'
 	]
   }
-  const env2 = JSON.stringify(env1);
-  const env = JSON.parse(env2);
- const apiTestResultFile = './junit-reportnnn/e2e-results.xml'
+  
+ const env2 = JSON.stringify(env1);
+ const env = JSON.parse(env2);
+
+ const apiTestResultFile = './junit-report/e2e-results.xml'
  const e2eTestResultFile = './junit-report/e2e-results.xml'
 
 const getFormattedDuration = ( time) => {
