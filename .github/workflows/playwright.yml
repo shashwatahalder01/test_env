@@ -30,7 +30,7 @@ jobs:
     #     node-version: 14
     - name: print vars
       run: |
-        echo "$GITHUB_CONTEXT"
+        env
 
     - name: Install dependencies
       run: |
