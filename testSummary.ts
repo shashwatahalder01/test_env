@@ -87,6 +87,11 @@ const addSummaryFooter = ( core ,list) => {
 };
 
 module.exports = async ( { github, context, core } ) => {
+
+	console.log(github);
+	console.log('xxxxxxxxxxxxxxxxxxxxxxx');
+	console.log(context);
+	
 	let plugins = addList(core);
 	await core.summary.clear();
 	addSummaryHeadingAndTable( core );
