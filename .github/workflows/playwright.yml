@@ -31,6 +31,7 @@ jobs:
     # - uses: actions/setup-node@v3
     #   with:
     #     node-version: 14
+
     # - name: Log
     #   env:
     #     GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -57,9 +58,10 @@ jobs:
 
     # - name: Run Playwright tests
     #   run: REPORT=e2e npx playwright test --project=e2e
-    - name: Install dependencies
-      run: |
-        env
+
+    # - name: Install dep,endencies
+    #   run: |
+    #     env
 
     # - name: Publish Test Report a
     #   uses: mikepenz/action-junit-report@v3.7.7
