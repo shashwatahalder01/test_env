@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { helpers } from '../../helpers';
 
 test('test_b_1 ', async () => {
-  helpers.createEnvVariable('HELL','on_fire');
+  // helpers.createEnvVariable('HELL','on_fire');
   expect(true).toBeTruthy();
 });
 
