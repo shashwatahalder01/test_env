@@ -99,7 +99,7 @@ jobs:
           result-encoding: string
           script: |
               const script = require("./testSummary.ts" )
-              return await script({github, context, core, env})
+              return await script({github, context, core})
       
     # - name: Find PR comment by github-actions[bot]
     #   uses: peter-evans/find-comment@v2
