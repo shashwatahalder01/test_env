@@ -32,11 +32,11 @@ jobs:
     #   with:
     #     node-version: 14
 
-    # - name: Log
-    #   env:
-    #     GITHUB_CONTEXT: ${{ toJson(github) }}
-    #   run: |
-    #     echo "$GITHUB_CONTEXT"
+    - name: Log
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
 
     - name: Install dependencies
       run: |

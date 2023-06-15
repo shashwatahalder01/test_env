@@ -1,5 +1,5 @@
 
-import fs from 'fs';
+// import fs from 'fs';
 
 // const env1 = {
 // 	wpVersion: 'WordPress Version: 6.2.2',
@@ -41,4 +41,22 @@ import fs from 'fs';
 // const r = readFile('./systemInfo.json')
 // console.log(r);
 // console.log(JSON.parse(r));
+
+
+
+// // let arr = ['A', 'B', 'C'];
+let arr = [
+    	  'dokan v3.7.20',
+    	  'dokan-pro v3.7.23',
+    	  'woocommerce v7.7.2',
+    	  'woocommerce-bookings v1.15.69',
+    	  'woocommerce-product-addons v5.0.1',
+    	  'woocommerce-simple-auctions v2.0.18',
+    	  'woocommerce-subscriptions v4.6.0'
+    	]
+
+const conditions = ["bookings", "addons", "auctions", "subscriptions" ];
+arr = arr.filter(e => !conditions.some(el => e.includes(el)));
+// arr = arr.filter(e => !e.includes(["bookings", "addons"]));
+console.log(arr);
 

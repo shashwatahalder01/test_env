@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pw:chrome-only": "playwright install chromium",
-    "test": "playwright test",
+    "test": " playwright test",
     "wp-env": "wp-env",
     "start:env": "wp-env start"
   },
