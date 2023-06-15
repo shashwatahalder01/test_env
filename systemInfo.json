@@ -1,0 +1,16 @@
+{
+    "wpVersion": "wwwWordPress_Version: 6.2.2",
+    "phpVersion": "PHP_Version: 8",
+    "mysqlVersion": "MySql_Version: 8.0.27",
+    "theme": "Theme: Storefront v4.2.0",
+    "wpDebugMode": "Debug Mode: true",
+    "activePlugins": [
+        "dokan v3.7.20",
+        "dokan-pro v3.7.23",
+        "woocommerce v7.7.2",
+        "woocommerce-bookings v1.15.69",
+        "woocommerce-product-addons v5.0.1",
+        "woocommerce-simple-auctions v2.0.18",
+        "woocommerce-subscriptions v4.6.0"
+    ]
+}
