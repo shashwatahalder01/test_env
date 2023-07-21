@@ -22,8 +22,9 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     // ['html', { open: 'never', outputFolder: `playwright-report/${process.env.report}/html/html-report-e2e` }],
-    ['junit', { outputFile: `playwright-report/${process.env.REPORT}/junit-report/e2e-results.xml` }],
-    ['list', { printSteps: true }]
+    // ['junit', { outputFile: `playwright-report/${process.env.REPORT}/junit-report/e2e-results.xml` }],
+    // ['list', { printSteps: true }],
+    ['json', { outputFile: 'results.json' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

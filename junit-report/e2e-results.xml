@@ -1,6 +1,0 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="1.13833599999547">
-<testsuite name="tests/e2e/a.spec.ts" timestamp="2023-05-31T09:44:56.811Z" hostname="e2e" tests="1" failures="0" skipped="0" time="0.037" errors="0">
-<testcase name="test1_a" classname="tests/e2e/a.spec.ts" time="0.037">
-</testcase>
-</testsuite>
-</testsuites>
