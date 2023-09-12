@@ -16,9 +16,9 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Start WordPress Env
-      run: |
-        npm run start:env 
+    # - name: Start WordPress Env
+    #   run: |
+    #     npm run start:env 
 
     - name: Install Playwright Browsers
       run: npx playwright install chromium
