@@ -31,12 +31,14 @@ jobs:
       if: always() 
       with:
         report_paths: "junit-report/e2e-results.xml"
-        # include_passed: TRUE,
-        # check_retries: TRUE,
+        job_summary: false
+        annotate_only: true,
+        # include_passed: true,
+        # check_retries: true,
         # detailed_summary: true,
-        check_name: 'E2E Test Report (JUnit)_check_nem'
+        check_name: 'E2E Test Report'
         summary: 'E2E Test Summary Report (JUnit)_summary'
-        # annotate_only: true,
+
         annotate_notice: true,
         job_name: 'e2e2e2e2e2e2e2e_jobName'
 

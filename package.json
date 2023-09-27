@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@wordpress/env": "^7.0.0",
-    "@playwright/test": "^1.33.0"
+    "@playwright/test": "^1.38.1",
+    "@wordpress/env": "^7.0.0"
   }
 }
