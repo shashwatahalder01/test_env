@@ -4,7 +4,7 @@ test('test1', async ({ page }) => {
   expect(true).toBeTruthy();
 });
 
-test.only('test2', async ({ page }) => {
+test('test2', async ({ page }) => {
   expect(true).toBeTruthy();
 });
 
@@ -20,7 +20,7 @@ test('test5', async ({ page }) => {
   test.skip();
 });
 
-test.only('test6', async ({ page }) => {
+test('test6', async ({ page }) => {
   test.skip();
 });
 

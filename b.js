@@ -16,7 +16,7 @@ data.suites.forEach(suite => {
         spec.tests.forEach(test => {
             const { status, results } = test;
             if (status === 'expected') counts.passed++;
-            else if (status === 'unexpected' && results.some(result => result.status === 'failed'))
+            else if (status === 'unexpected' && results.every(result => result.status === 'failed'))
                 counts.failed++;
             else if (status === 'flaky')
                 counts.flaky++;
