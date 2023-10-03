@@ -23,12 +23,12 @@ export default defineConfig({
   reporter: [
     // ["github"],
     // ["junit", { outputFile: "Report/junit/results.xml" }],
-    ['json', { outputFile: 'Report/json/results.json' }],
-    ['html', { open: 'never', outputFolder: 'Report/html/results' }],
+    ["json", { outputFile: "Report/json/results.json" }],
+    ["html", { open: "never", outputFolder: "Report/html/results" }],
     // ['blob', { outputDir: 'Report/blob/results' }],
-    ["./my-awesome-reporter.ts"],
-    // ['allure-playwright',	{ detail: false, outputFolder: 'playwright-report/allure-report', suiteTitle: false }],
-    ['playwright-json-summary-reporter'],
+    // ["./summaryReport.ts"],
+    ["./summaryReporter.ts"],
+    // ["./s.ts"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

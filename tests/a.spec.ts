@@ -12,7 +12,7 @@ test('test3', async ({ page }) => {
   expect(false).toBeTruthy();
 });
 
-test.only('test4', async ({ page }) => {
+test('test4', async ({ page }) => {
   expect(false).toBeTruthy();
 });
 
@@ -29,7 +29,7 @@ test('test6', async ({ page }) => {
 // const people = ['Alice', 'Bob', 'Charlie', 'Dave', 'Eve', 'Frank'];
 const people = ['Alice', 'Bob', 'Charlie']
 for (const name of people) {
-  test.only(`testing with ${name}`, async () => {
+  test(`testing with ${name}`, async () => {
     expect(true).toBeTruthy();
     const randomIndex = randomInteger(0, 1);
     if (randomIndex === 0) {

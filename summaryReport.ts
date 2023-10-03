@@ -27,11 +27,11 @@ onTestEnd(test: TestCase, result: TestResult): void {
     const outcome = test.outcome();
     const { retry } = result;
     // console.log(outcome, retry);
-    console.log(result);
+    // console.log(result);
     // console.log(test.results);
-    console.log(outcome, result.status, result.retry);
+    // console.log(outcome, result.status, result.retry);
 
-    console.log(test)
+    // console.log(test)
 
     if (outcome === "expected") this.stats.passed += 1;
     if (outcome === "skipped") this.stats.skipped += 1;
