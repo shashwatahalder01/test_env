@@ -47,6 +47,7 @@ jobs:
       # job_name: 'e2e2e2e2e2e2e2e_jobName'
 
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: playwright-report
           path: test-results
