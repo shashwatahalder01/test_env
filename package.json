@@ -6,6 +6,7 @@
   "scripts": {
     "pw:chrome-only": "playwright install chromium",
     "test": "playwright test",
+    "test:e:a": "playwright test --project=e2e-api",
     "wp-env": "wp-env",
     "start:env": "wp-env start"
   },

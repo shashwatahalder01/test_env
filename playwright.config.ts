@@ -1,5 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -21,14 +22,14 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    // ["github"],
+    ["github"],
     // ["junit", { outputFile: "Report/junit/results.xml" }],
-    ["json", { outputFile: "Report/json/results.json" }],
-    ["html", { open: "never", outputFolder: "Report/html/results" }],
+    // ["json", { outputFile: "Report/json/results.json" }],
+    // ["html", { open: "never", outputFolder: "Report/html/results" }],
     // ['blob', { outputDir: 'Report/blob/results' }],
     // ["./summaryReport.ts"],
-    ["./summaryReporter.ts"],
-    // ["./s.ts"],
+    // ["./summaryReporter.ts"],
+    // ["./myreport.ts", { outputFile: "Report/summary/myreport.json" }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -42,7 +43,7 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: "e2e-api",
       use: { ...devices["Desktop Chrome"] },
     },
 
