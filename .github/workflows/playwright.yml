@@ -1,5 +1,5 @@
 name: Playwright Tests
-run-name: ${{ github.actor }} is learning GitHub Actions
+# run-name: ${{ github.actor }} is learning GitHub Actions
 
 on:
   push:
@@ -20,8 +20,8 @@ jobs:
       - name: View Environment Variables
         run: |
           echo "GitHub Repository: ${{ secrets.GMAP }}"
-          echo "GitHub Repository: ${{ GMAP }}"
-          echo "GitHub Repository: ${{ GGG }}"
+          echo "GitHub Repository: $GMAP"
+          echo "GitHub Repository: $GGG"
           echo env
       # - uses: actions/checkout@v3
       # - uses: actions/setup-node@v3
