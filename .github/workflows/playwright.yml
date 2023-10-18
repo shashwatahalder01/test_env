@@ -3,7 +3,7 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [main, master]
+    branches: [main, master, testgrep]
   pull_request:
     branches: [main, master]
 
@@ -17,7 +17,6 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
