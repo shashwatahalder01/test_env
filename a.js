@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fs = require('fs');
 
 // Read the JSON file
 const jsonData = fs.readFileSync('Report/json/results.json', 'utf8');

@@ -7,7 +7,7 @@
     "pw:chrome-only": "playwright install chromium",
     "test": "playwright test",
     "test:e:a": "playwright test --project=e2e-api",
-    "test:grep": "npx playwright test --project=e2e-api --grep '@lite|@liteOnly' --grep-invert '@pro' ",
+    "test:grep": "npx playwright test --project=e2e-api  --grep-invert '@pro' ",
     "wp-env": "wp-env",
     "start:env": "wp-env start"
   },

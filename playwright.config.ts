@@ -47,7 +47,8 @@ export default defineConfig({
     {
       name: "setup",
       // testMatch: /.*\.setup\.ts/,
-      testMatch: /.*\.setup\.spec\.ts/,
+      // testMatch: /.*\.setup\.spec\.ts/,
+      testMatch: /.*\.spec\.ts/,
     },
     {
       name: "e2e-api",

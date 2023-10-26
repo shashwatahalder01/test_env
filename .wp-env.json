@@ -1,4 +1,10 @@
 {
-    "core": null,
-    "plugins": [ "." ]
+  "core": null,
+  "phpVersion": "7.4",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip"
+  ],
+  "themes": [
+    "https://downloads.wordpress.org/theme/storefront.latest-stable.zip"
+  ]
 }
