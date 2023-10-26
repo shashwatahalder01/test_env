@@ -33,5 +33,5 @@ jobs:
 
       - name: Set Permalink structure
         run: |
-          npm run wp-env run cli "wp rewrite structure '/%postname%/' --hard"
+          npm run wp-env run cli wp rewrite structure /%postname%/
           curl http://localhost:8888/wp-json/wp/v2
