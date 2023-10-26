@@ -28,12 +28,10 @@ jobs:
           
       - name: Install dependencies  & start wp env
         run: |
-          cd tests/e2e 
           npm ci 
           npm run wp-env start       
   
       - name: Set Permalink structure
         run: |
-          cd tests/e2e 
           npm run wp-env run cli 'wp rewrite structure /%postname%/'  --hard 
           curl http://localhost:8888/wp-json/wp/v2
