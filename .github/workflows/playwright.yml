@@ -18,20 +18,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-         ref: "testenv"
+          ref: "testenv"
 
       - name: Use desired version of NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
           cache: "npm"
-          
+
       - name: Install dependencies  & start wp env
         run: |
           npm ci 
-          npm run wp-env start       
-  
+          npm run wp-env start
+
       - name: Set Permalink structure
         run: |
-          npm run wp-env run cli wp rewrite structure /%postname%/  --hard 
+          npm run wp-env run cli wp rewrite structure /%postname%/
           curl http://localhost:8888/wp-json/wp/v2
