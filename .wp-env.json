@@ -8,6 +8,6 @@
     "https://downloads.wordpress.org/theme/storefront.latest-stable.zip"
   ],
   "mappings": {
-    "wp-cli.yml": ".github/workflows/wp-cli.yml"
+    "wp-cli.yml": "wp-cli.yml"
   }
 }
