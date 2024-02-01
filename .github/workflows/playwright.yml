@@ -3,7 +3,7 @@ name: Tests env
 on:
   pull_request:
   push:
-    branches: [testenv, private]
+    branches: [private]
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
   cancel-in-progress: true
