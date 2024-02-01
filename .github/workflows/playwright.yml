@@ -3,8 +3,7 @@ name: Tests env
 on:
   pull_request:
   push:
-    branches:
-      - testenv
+    branches: [testenv, private]
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
   cancel-in-progress: true
@@ -17,8 +16,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          ref: "testenv"
 
       - name: Use desired version of NodeJS
         uses: actions/setup-node@v3
@@ -34,4 +31,16 @@ jobs:
       - name: Set Permalink structure
         run: |
           npm run wp-env run cli wp rewrite structure /%postname%/
-          curl http://localhost:8888/wp-json/wp/v2
+        # curl http://localhost:8888/wp-json/wp/v2
+
+      # Upload artifacts
+      - name: Archive test artifacts (screenshots, HTML snapshots, Reports)
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+            name: test-artifact
+            path: |
+                tests/pw/playwright
+                tests/pw/playwright-report
+            if-no-files-found: ignore
+            retention-days: 3
