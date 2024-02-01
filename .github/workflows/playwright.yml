@@ -50,6 +50,6 @@ jobs:
           name: test-artifact
           path: |
             playwright
-            playwright-report
+            Report
           if-no-files-found: ignore
           retention-days: 3
