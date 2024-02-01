@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with: 
+          ref: 'private'
+
 
       - name: Use desired version of NodeJS
         uses: actions/setup-node@v3
