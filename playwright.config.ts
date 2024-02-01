@@ -24,10 +24,10 @@ export default defineConfig({
   reporter: [
     // ['dot'],
     ["list"],
-    // ["github"],
+    ["github"],
     // ["junit", { outputFile: "Report/junit/results.xml" }],
     // ["json", { outputFile: "Report/json/results.json" }],
-    // ["html", { open: "never", outputFolder: "Report/html/results" }],
+    ["html", { open: "never", outputFolder: "Report/html/results" }],
     // ['blob', { outputDir: 'Report/blob/results' }],
     // ["./summaryReport.ts"],
     // ["./summaryReporter.ts"],
