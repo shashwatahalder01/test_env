@@ -15,11 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@playwright/test": "^1.39.0",
-    "@wordpress/env": "^8.10.0",
-    "allure-playwright": "^2.8.1",
-    "i": "^0.3.7",
-    "npm": "^10.1.0",
-    "playwright-json-summary-reporter": "^1.0.0"
+    "@playwright/test": "^1.41.2",
+    "@wordpress/env": "^9.2.0"
   }
 }
