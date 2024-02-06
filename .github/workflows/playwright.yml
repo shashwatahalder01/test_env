@@ -15,21 +15,24 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: "private"
 
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: shashwatahalder01/testp
           path: 'plugins'
           ref: 'zip'
+          sparse-checkout: 'plugins'
+          sparse-checkout-cone-mode: false
+
 
       - name: upzip plugin
         run: |
           cd plugins
-          which unzip
+          ls
           unzip dokan-lite.zip
 
       - name: pwd
