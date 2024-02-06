@@ -19,6 +19,19 @@ jobs:
         with:
           ref: "private"
 
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          repository: shashwatahalder01/testp
+          path: 'plugins'
+          ref: 'zip'
+
+      - name: upzip plugin
+        run: |
+          cd plugins
+          which unzip
+          unzip dokan-lite.zip
+
       - name: Use desired version of NodeJS
         uses: actions/setup-node@v3
         with:
