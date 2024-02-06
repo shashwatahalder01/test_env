@@ -1,5 +1,5 @@
 {
-  "core": "ssh://git@github.com/WordPress/WordPress.git",
+  "core": null,
   "phpVersion": "7.4",
   "plugins": [
     "https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip",
