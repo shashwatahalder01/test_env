@@ -25,13 +25,13 @@ jobs:
           repository: shashwatahalder01/testp
           path: 'plugins'
           ref: 'zip'
-          sparse-checkout: 'plugins'
+          sparse-checkout: 'plugins/'
           sparse-checkout-cone-mode: false
 
 
       - name: upzip plugin
         run: |
-          cd plugins/plugins
+          cd plugins
           ls
           unzip dokan-lite.zip
 
