@@ -22,23 +22,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          repository: shashwatahalder01/testp
-          path: 'plugins'
           ref: 'zip'
-          sparse-checkout: 'plugins/'
+          sparse-checkout: 'plugins'
           sparse-checkout-cone-mode: false
-
+      
+      - name: pwd
+        run: |
+            pwd
+            ls
+            cd plugins
+            ls
 
       - name: upzip plugin
         run: |
           cd plugins
           ls
           unzip dokan-lite.zip
-
-      - name: pwd
-        run: |
-          pwd
-          ls
 
       - name: Use desired version of NodeJS
         uses: actions/setup-node@v3
