@@ -19,6 +19,13 @@ jobs:
         with:
           ref: "private"
 
+      - name: pwd
+        run: |
+            mkdir plugins
+            cd plugins
+            touch index.php
+            ls
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
