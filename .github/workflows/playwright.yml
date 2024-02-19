@@ -39,7 +39,7 @@ jobs:
         run: |
             cd abc
             pwd
-            ls -R
+            ls
 
       # - name: upzip plugin
       #   run: |
