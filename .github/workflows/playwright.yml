@@ -32,14 +32,20 @@ jobs:
           repository: "shashwatahalder01/test_env"
           ref: "zip"
           path: abc
-          sparse-checkout: |
-            dokan-lite.zip
           sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            admin.spec.ts
+
 
       - name: pwd
         run: |
           cd abc
           pwd
+          ls
+
+      - name: pwd
+        run: |
+          cd abc/tests
           ls
 
       # - name: upzip plugin
