@@ -19,64 +19,65 @@ jobs:
         with:
           ref: "private"
 
-      - name: pwd
-        run: |
-            mkdir plugins
-            cd plugins
-            touch index.php
-            ls
+      # - name: pwd
+      #   run: |
+      #       mkdir plugins
+      #       cd plugins
+      #       touch index.php
+      #       ls
 
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           ref: 'zip'
-          sparse-checkout: 'plugins'
+          path: abc
+          sparse-checkout: 'tests'
           sparse-checkout-cone-mode: false
       
       - name: pwd
         run: |
             pwd
             ls
-            cd plugins
+            cd abc
             ls
 
-      - name: upzip plugin
-        run: |
-          cd plugins
-          ls
-          unzip dokan-lite.zip
+      # - name: upzip plugin
+      #   run: |
+      #     cd plugins
+      #     ls
+      #     unzip dokan-lite.zip
 
-      - name: Use desired version of NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: "npm"
+      # - name: Use desired version of NodeJS
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: "16"
+      #     cache: "npm"
 
-      - name: Install dependencies  & start wp env
-        run: |
-          npm ci 
-          npm run wp-env start
+      # - name: Install dependencies  & start wp env
+      #   run: |
+      #     npm ci 
+      #     npm run wp-env start
 
-      - name: Set Permalink structure
-        run: |
-          npm run wp-env run cli wp rewrite structure /%postname%/
-        # curl http://localhost:8888/wp-json/wp/v2
+      # - name: Set Permalink structure
+      #   run: |
+      #     npm run wp-env run cli wp rewrite structure /%postname%/
+      #   # curl http://localhost:8888/wp-json/wp/v2
 
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium
+      # - name: Install Playwright Browsers
+      #   run: npx playwright install chromium
 
-      - name: Run Playwright tests
-        id: test
-        run: npx playwright test
+      # - name: Run Playwright tests
+      #   id: test
+      #   run: npx playwright test
 
-      # Upload artifacts
-      - name: Archive test artifacts (screenshots, HTML snapshots, Reports)
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: test-artifact
-          path: |
-            playwright
-            Report
-          if-no-files-found: ignore
-          retention-days: 3
+      # # Upload artifacts
+      # - name: Archive test artifacts (screenshots, HTML snapshots, Reports)
+      #   uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     name: test-artifact
+      #     path: |
+      #       playwright
+      #       Report
+      #     if-no-files-found: ignore
+      #     retention-days: 3
