@@ -34,7 +34,7 @@ jobs:
           path: abc
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            admin.spec.ts
+            tests/plugins
 
 
       - name: pwd
