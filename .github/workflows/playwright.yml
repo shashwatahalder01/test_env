@@ -33,7 +33,7 @@ jobs:
           path: abc
           sparse-checkout: |
             tests/plugins/dokan-lite.zip
-          # sparse-checkout-cone-mode: false
+          sparse-checkout-cone-mode: false
       
       - name: pwd
         run: |
