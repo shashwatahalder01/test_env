@@ -32,7 +32,8 @@ jobs:
           ref: 'zip'
           path: abc
           sparse-checkout: |
-            'tests/'
+            tests/
+            tests/plugins/
           # sparse-checkout-cone-mode: false
       
       - name: pwd
