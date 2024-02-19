@@ -29,17 +29,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: 'zip'
+          repository: "shashwatahalder01/test_env"
+          ref: "zip"
           path: abc
           sparse-checkout: |
             dokan-lite.zip
           sparse-checkout-cone-mode: false
-      
+
       - name: pwd
         run: |
-            cd abc
-            pwd
-            ls
+          cd abc
+          pwd
+          ls
 
       # - name: upzip plugin
       #   run: |
@@ -55,7 +56,7 @@ jobs:
 
       # - name: Install dependencies  & start wp env
       #   run: |
-      #     npm ci 
+      #     npm ci
       #     npm run wp-env start
 
       # - name: Set Permalink structure
