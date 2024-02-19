@@ -34,7 +34,7 @@ jobs:
           path: abc
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            tests/plugins
+           tests/plugins/dokan-lite.zip
 
 
       - name: pwd
@@ -46,6 +46,8 @@ jobs:
       - name: pwd
         run: |
           cd abc/tests
+          ls
+          cd plugins
           ls
 
       # - name: upzip plugin
