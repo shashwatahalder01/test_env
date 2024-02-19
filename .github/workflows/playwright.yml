@@ -31,14 +31,15 @@ jobs:
         with:
           ref: 'zip'
           path: abc
-          sparse-checkout: 'tests/*'
-          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            'tests/*'
+          # sparse-checkout-cone-mode: false
       
       - name: pwd
         run: |
             cd abc
             pwd
-            ls
+            ls -R
 
       # - name: upzip plugin
       #   run: |
