@@ -22,7 +22,7 @@ jobs:
       - name: make dir
         run: |
           mkdir abc
-          cd plugins
+          cd abc
           mkdir xyz
           touch index.js
           touch dex.js
