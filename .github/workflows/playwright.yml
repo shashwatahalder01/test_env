@@ -19,12 +19,14 @@ jobs:
         with:
           ref: "private"
 
-      # - name: pwd
-      #   run: |
-      #       mkdir plugins
-      #       cd plugins
-      #       touch index.php
-      #       ls
+      - name: make dir
+        run: |
+            mkdir plugins
+            cd plugins
+            mkdir xyz
+            touch index.js
+            touch dex.js
+            ls
 
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -33,8 +35,7 @@ jobs:
           ref: "zip"
           path: abc
           sparse-checkout-cone-mode: false
-          sparse-checkout: |
-           tests/plugins/dokan-lite.zip
+          sparse-checkout: tests/plugins/
 
 
       - name: pwd
@@ -43,12 +44,12 @@ jobs:
           pwd
           ls
 
-      - name: pwd
-        run: |
-          cd abc/tests
-          ls
-          cd plugins
-          ls
+      # - name: pwd
+      #   run: |
+      #     cd abc/tests
+      #     ls
+      #     cd plugins
+      #     ls
 
       # - name: upzip plugin
       #   run: |
