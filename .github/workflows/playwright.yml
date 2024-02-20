@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: "private"
+          ref: private
 
       - name: make dir
         run: |
@@ -34,6 +34,7 @@ jobs:
           repository: shashwatahalder01/test_env
           ref: zip
           path: abc
+          clean: false
           sparse-checkout-cone-mode: false
           sparse-checkout: tests/plugins/
 
