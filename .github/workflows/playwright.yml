@@ -21,22 +21,21 @@ jobs:
 
       - name: make dir
         run: |
-            mkdir plugins
-            cd plugins
-            mkdir xyz
-            touch index.js
-            touch dex.js
-            ls
+          mkdir abc
+          cd plugins
+          mkdir xyz
+          touch index.js
+          touch dex.js
+          ls
 
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          repository: "shashwatahalder01/test_env"
-          ref: "zip"
+          repository: shashwatahalder01/test_env
+          ref: zip
           path: abc
           sparse-checkout-cone-mode: false
           sparse-checkout: tests/plugins/
-
 
       - name: pwd
         run: |
