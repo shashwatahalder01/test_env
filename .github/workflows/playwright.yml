@@ -45,6 +45,31 @@ jobs:
           pwd
           ls
 
+      - name: make dir2
+        run: |
+          mkdir abc
+          cd abc
+          mkdir xyz
+          touch index.js
+          touch dex.js
+          ls
+
+      - name: Checkout repo4
+        uses: actions/checkout@v4
+        with:
+          repository: shashwatahalder01/test_env
+          ref: zip
+          path: abc
+          clean: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: tests/plugins/
+
+      - name: pwd
+        run: |
+          cd abc
+          pwd
+          ls
+
       # - name: pwd
       #   run: |
       #     cd abc/tests
