@@ -29,6 +29,8 @@ jobs:
           repository: shashwatahalder01/dokan
           path: plugins
           ref: testlite
+          sparse-checkout: pw
+          sparse-checkout-cone-mode: false
 
       - name: Clone dokan-lites
         if: success()
