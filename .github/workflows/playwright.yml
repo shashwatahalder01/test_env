@@ -27,7 +27,7 @@ jobs:
           # path: 'plugins/dokan'
           # ref: 'develop'
           repository: shashwatahalder01/dokan
-          path: plugins/dokan
+          path: plugins
           ref: testlite
 
       - name: Clone dokan-lites
