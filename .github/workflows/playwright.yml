@@ -17,7 +17,7 @@ jobs:
       - name: Checkout repo1
         uses: actions/checkout@v4
         with:
-          # clean: false
+          clean: false
           ref: private
 
       - name: make dir
@@ -47,12 +47,13 @@ jobs:
 
       - name: make dir2
         run: |
-          mkdir abc
-          cd abc
-          mkdir xyz
-          touch index.js
-          touch dex.js
-          ls
+          git -v
+      #     mkdir abc
+      #     cd abc
+      #     mkdir xyz
+      #     touch index.js
+      #     touch dex.js
+      #     ls
 
       # - name: pwd
       #   run: |
