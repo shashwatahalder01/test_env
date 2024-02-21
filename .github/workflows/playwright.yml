@@ -19,35 +19,52 @@ jobs:
         with:
           clean: false
           ref: private
-
-      - name: make dir
-        run: |
-          mkdir abc
-          cd abc
-          mkdir xyz
-          touch index.js
-          touch dex.js
-          ls
-
-      - name: Checkout repo2
+      - name: Clone dokan-lite
+        if: success()
         uses: actions/checkout@v4
         with:
-          repository: shashwatahalder01/test_env
-          ref: zip
-          # path: abc
-          clean: false
-          sparse-checkout-cone-mode: false
-          sparse-checkout: tests/plugins/
+          # repository: getdokan/dokan
+          # path: 'plugins/dokan'
+          # ref: 'develop'
+          repository: shashwatahalder01/dokan
+          path: plugins/dokan
+          ref: testlite
 
-      - name: pwd
+      - name: Clone dokan-lites
+        if: success()
         run: |
-          # cd abc
+          cd plugins
           pwd
           ls
 
-      - name: make dir2
-        run: |
-          git -v
+      # - name: make dir
+      #   run: |
+      #     mkdir abc
+      #     cd abc
+      #     mkdir xyz
+      #     touch index.js
+      #     touch dex.js
+      #     ls
+
+      # - name: Checkout repo2
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: shashwatahalder01/test_env
+      #     ref: zip
+      #     # path: abc
+      #     clean: false
+      #     sparse-checkout-cone-mode: false
+      #     sparse-checkout: tests/plugins/
+
+      # - name: pwd
+      #   run: |
+      #     # cd abc
+      #     pwd
+      #     ls
+
+      # - name: make dir2
+      #   run: |
+      #     git -v
       #     mkdir abc
       #     cd abc
       #     mkdir xyz
