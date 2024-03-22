@@ -41,7 +41,7 @@ jobs:
       #     ls
 
       - name: make dir
-        id: make_dir
+        id: make-dir
         run: |
           mkdir abc
           cd abc
@@ -52,11 +52,11 @@ jobs:
 
       - name: pwd
         run: |
-          echo "wp-env outcome: " ${{ steps.make_dir.outcome }}
+          echo "wp-env outcome: " ${{ steps.make-dir.outcome }}
 
       # Run API tests
       - name: 🧪 Running the api tests
-        if: steps.make_dir.outcome == 'success' 
+        if: steps.make-dir.outcome == 'success' 
         run: |
           echo "API tests are running"
           
