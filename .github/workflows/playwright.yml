@@ -54,6 +54,13 @@ jobs:
         run: |
           echo "wp-env outcome: " ${{ steps.make_dir.outcome }}
 
+      # Run API tests
+      - name: 🧪 Running the api tests
+        if: steps.make_dir.outcome == 'success' 
+        run: |
+          echo "API tests are running"
+          
+
       # - name: Checkout repo2
       #   uses: actions/checkout@v4
       #   with:
