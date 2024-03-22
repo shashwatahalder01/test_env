@@ -52,7 +52,7 @@ jobs:
 
       - name: pwd
         run: |
-          echo ${{ steps.make_dir.outcome }}
+          echo "wp-env outcome: " ${{ steps.make_dir.outcome }}
 
       # - name: Checkout repo2
       #   uses: actions/checkout@v4
