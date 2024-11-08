@@ -13,8 +13,8 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
-  schedule:
-    - cron: "0 8 * * *" # workflow will run daily at 8:00 AM
+  # schedule:
+  #   - cron: "0 8 * * *" # workflow will run daily at 8:00 AM
   workflow_dispatch:
 
 jobs:
