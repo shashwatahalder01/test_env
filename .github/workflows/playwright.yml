@@ -16,7 +16,30 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
+      - name: Get System Information
+        run: |
+          echo "CPU Information:"
+          lscpu
+
+          echo "Memory Information:"
+          lsmem
+          free -h
+
+          echo "Disk Information:"
+          df -h
+
+          echo "OS Information:"
+          uname -a
+          cat /etc/os-release
+
+          echo "Detailed CPU Info:"
+          cat /proc/cpuinfo
+
+          echo "Detailed Memory Info:"
+          cat /proc/meminfo
+
       - name: View Environment Variables
         run: |
           echo "GitHub Repository: ${{ secrets.GMAP }}"
