@@ -14,11 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@playwright/test": "^1.48.2",
-    "@wordpress/env": "^10.11.0",
+    "@playwright/test": "^1.57.0",
+    "@wordpress/env": "^10.37.0",
     "allure-playwright": "^3.0.6",
     "i": "^0.3.7",
-    "npm": "^10.9.0",
+    "npm": "^11.7.0",
     "npm-check-updates": "^17.1.10",
     "playwright-json-summary-reporter": "^1.0.1"
   }
